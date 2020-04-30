@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM coursework.reviews AS r WHERE r.rating = ${var:rating};
