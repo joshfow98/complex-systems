@@ -7,8 +7,8 @@ function user_options() {
     separator
     echo "The options are as follows: "
     echo "1) Review Rating Count"
-    echo "2) Number of places for every price range."
-    echo "3) Review Rating Count"
+    echo "2) Number of places for every price range"
+    echo "3) Common collocations for reviews"
     echo "4) Review Rating Count"
     echo "5) Review Rating Count"
     echo "6) Review Rating Count"
@@ -21,6 +21,7 @@ function user_options() {
 
 options[1]="./ratings_review_count/ratings_review_count.sh"
 options[2]="./functionality2/functionality2.sh"
+options[3]="./functionality4/functionality4.sh"
 optionsLen=${#options[*]}
 
 separator
