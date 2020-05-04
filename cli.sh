@@ -12,16 +12,33 @@ function user_options() {
     echo "4) Review Rating Count"
     echo "5) Review Rating Count"
     echo "6) Review Rating Count"
-    echo "7) Review Rating Count"
+    echo "7) Open/Closed Places Count"
     echo "8) Review Rating Count"
-    echo "9) Review Rating Count"
-    echo "10) Review Rating Count"
+    echo "9) Average Review Rating Per Category"
+    echo "10) Top 5 review categories by average rating"
+    echo "11) Open/Closed Places grouped by price range"
+    echo "12) Average Review rating for each price"
+    echo "13) Total number of reviews for each price"
+    echo "14) Average character length for reviews for each rating"
+    echo "15) Locate the place with highest number of reviews"	
     separator
 }
 
 options[1]="./ratings_review_count/ratings_review_count.sh"
 options[2]="./functionality2/functionality2.sh"
 options[3]="./functionality4/functionality4.sh"
+options[4]=""
+options[5]=""
+options[6]=""
+options[7]="./open-closed_places_count/open-closed_places_count.sh"
+options[8]="./open-closed_places_count/open-closed_places_count.sh"
+options[9]="./avg_review_rating_per_category/avg_review_rating_per_category.sh"
+options[10]="./top_5_review_categories_by_avg_rating/top_5_review_categories_by_avg_rating.sh"
+options[11]="./open-closed_places_by_price-range_count/open-closed_places_by_price-range_count.sh"
+options[12]="./functionality12/functionality12.sh"
+options[13]="./functionality13/functionality13.sh"
+options[14]="functionality14/functionality14.sh"
+options[15]="functionality15/functionality15.sh"
 optionsLen=${#options[*]}
 
 separator
