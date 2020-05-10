@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 function separator() {
     echo "+-----------------------------------------------------------+"
 }
 
-function user_options() {
+function user_options() { 
     separator
     echo "The options are as follows: "
     echo "1) Review Rating Count"
@@ -24,7 +24,7 @@ function user_options() {
     separator
 }
 
-options[1]="./ratings_review_count/ratings_review_count.sh"
+options[1]="./functionality1/functionality1.sh"
 options[2]="./functionality2/functionality2.sh"
 options[3]="./functionality4/functionality4.sh"
 options[4]=""
@@ -61,12 +61,12 @@ do
             echo "optionsLen is: " $optionsLen
             sh ${options[$option]}
             user_options
-        else 
+        else
             echo $option "is not a valid option"
         fi
     elif [ $option == "q" ]; then
         continueExecuting=false
-    else 
+    else
         echo $option "is not a number"
     fi
 done
