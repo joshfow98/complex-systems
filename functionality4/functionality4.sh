@@ -58,3 +58,6 @@ hadoop jar ./functionality4/CollocationCount.jar uk.ac.edgehill.WordCount /tmp/m
 echo -e "\nCollocation | number of instances\n-------------------------------------"
 #Sort the result of map reduce by descending values and display the twenty most frequent collocations.
 hdfs dfs -cat $file_loc/part-r-00000 | sort -k 4 -n -r | head -n 20
+
+read -p "Please press enter to continue" enter_pressed
+
