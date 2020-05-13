@@ -17,7 +17,7 @@ do
         echo $word " not valid, only single words and no spaces allowed"
     elif [ $word != "q" ]; then 
         response=$(curl -s -X GET "http://localhost:9200/hivereviews/_search?q=$word&filter_path=hits.hits._source&_source=gplususerid,gplusplaceid")
-        python parse_response.py $response $word
+        python ./functionality8/parse_response.py $response $word
     else
         continueExecuting=false
     fi
