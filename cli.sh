@@ -8,12 +8,12 @@ function user_options() {
     echo "The options are as follows: "
     echo "1) Review Rating Count"
     echo "2) Number of places for every price range"
-    echo "3) Common collocations for reviews"
-    echo "4) Review Rating Count"
-    echo "5) Review Rating Count"
-    echo "6) Review Rating Count"
+    echo "3) Not availible"
+    echo "4) Common collocations for reviews"
+    echo "5) Not availible"
+    echo "6) Not availible"
     echo "7) Open/Closed Places Count"
-    echo "8) Review Rating Count"
+    echo "8) Open/Closed Places Count"
     echo "9) Average Review Rating Per Category"
     echo "10) Top 5 review categories by average rating"
     echo "11) Open/Closed Places grouped by price range"
@@ -26,10 +26,10 @@ function user_options() {
 
 options[1]="./functionality1/functionality1.sh"
 options[2]="./functionality2/functionality2.sh"
-options[3]="./functionality4/functionality4.sh"
-options[4]=""
-options[5]=""
-options[6]=""
+options[3]="./unavailible.sh"
+options[4]="./functionality4/functionality4.sh"
+options[5]="./unavailible.sh"
+options[6]="./unavailible.sh"
 options[7]="./open-closed_places_count/open-closed_places_count.sh"
 options[8]="./functionality8/functionality8.sh"
 options[9]="./avg_review_rating_per_category/avg_review_rating_per_category.sh"
@@ -44,7 +44,7 @@ optionsLen=${#options[*]}
 separator
 echo "Welcome to Coursework 2 CLI!"
 separator
-echo "This CLI allows you to choose any of the 10 options"
+echo "This CLI allows you to choose any of the 12 options"
 echo "that will be presented. Choose your option by entering"
 echo "the number corresponding with that option."
 echo "To exit this program enter q."
@@ -58,7 +58,6 @@ do
     read -p "Enter your option or 'q' to exit: " option
     if [[  $option =~ $numericRegex ]]; then
         if [ $option -ne 0 ] | [ $option -le $optionsLen ]; then
-            echo "optionsLen is: " $optionsLen
             sh ${options[$option]}
             user_options
         else

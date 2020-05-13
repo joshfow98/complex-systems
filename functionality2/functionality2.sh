@@ -15,3 +15,5 @@ places3=$(impala-shell -B --quiet -q "SELECT COUNT(*) FROM coursework.places WHE
 echo -e "\nPrice range \$ contains $places1 places."
 echo "Price range \$\$ contains $places2 places."
 echo "Price range \$\$\$ contains $places3 places."
+
+read -p "Please press enter to continue" enter_pressed
