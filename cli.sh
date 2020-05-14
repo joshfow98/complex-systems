@@ -16,7 +16,7 @@ function user_options() {
     echo "5) Not availible"
     echo "6) Not availible"
     echo "7) Open/Closed Places Count"
-    echo "8) Open/Closed Places Count"
+    echo "8) Full-text search"
     echo "9) Average Review Rating Per Category"
     echo "10) Top 5 review categories by average rating"
     echo "11) Open/Closed Places grouped by price range"
@@ -41,8 +41,8 @@ options[10]="./top_5_review_categories_by_avg_rating/top_5_review_categories_by_
 options[11]="./open-closed_places_by_price-range_count/open-closed_places_by_price-range_count.sh"
 options[12]="./functionality12/functionality12.sh"
 options[13]="./functionality13/functionality13.sh"
-options[14]="functionality14/functionality14.sh"
-options[15]="functionality15/functionality15.sh"
+options[14]="./functionality14/functionality14.sh"
+options[15]="./functionality15/functionality15.sh"
 optionsLen=${#options[*]}
 
 #Introduces the user to the program
