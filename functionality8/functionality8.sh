@@ -1,11 +1,13 @@
 #!/bin/sh
+#Written by Josh
 #Used to separate the output on the screen to make it easier for the user to digest
 function separator() {
     echo "+-----------------------------------------------------------+"
 }
 
 separator
-echo "This script will find the total number of reviews for the"
+echo "This script will output the gplususerid and gplusplaceid"
+echo "for all reviews that contain the keyword that you input"
 separator
 
 #Regex will allow doubles as well as integers between 0.0 and 5.0
