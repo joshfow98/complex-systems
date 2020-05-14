@@ -3,15 +3,19 @@
 function separator() {
     echo "+-----------------------------------------------------------+"
 }
-
+#Prints out the inital comments to show script is running
 separator
 echo -e "This script computes the average rating for each price range \nin the Places and Reviews dataset."
 separator
 
-rating1=$(impala-shell -B --quiet -q "SELECT AVG(r.rating) from coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$'")
-rating2=$(impala-shell -B --quiet -q "SELECT AVG(r.rating) FROM coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$\$'")
-rating3=$(impala-shell -B --quiet -q "SELECT AVG(r.rating) FROM coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$\$\$'")
+#runs the sql query rating 1 to select the average rating for price $
+impala-shell -f ./functionality12/rating1.sql
+separator
 
-echo -e "\nAverage price for \$ is $rating1."
-echo "Average price for \$\$ is $rating2."
-echo "Average price for \$\$\$ is $rating3."
+#runs the sql query rating 2 to select the average rating for price $$
+impala-shell -f ./functionality12/rating2.sql
+separator
+
+#runs the sql query rating 2 to select the average rating for price $$$
+impala-shell -f ./functionality12/rating3.sql
+separator

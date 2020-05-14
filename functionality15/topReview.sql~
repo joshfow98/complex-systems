@@ -10,5 +10,9 @@ separator
 echo -e "\n This might take a while...\n"
 #variable to hold the imapal sql query to be run later
 #SELECTs the count of gplusplaceid along with the gplusplaceid, name from reviews table and joins the places table with matching gplusplaceids, orders by counted gplusplceid and limites the select to 1
-impala-shell -f ./functionality15/topReview.sql
+rating=$(impala-shell -B --quiet -q "SELECT count(r.gplusplaceid) AS total_reviews, r.gplusplaceid, p.name FROM coursework.reviews AS r LEFT JOIN coursework.places AS p ON r.gplusplaceid = p.gplusplaceid GROUP BY p.name, r.gplusplaceid ORDER BY total_reviews DESC LIMIT 1")
+#echos the results to the CLI.sh
+echo -e "\nPLace that has received the largest number of reviews"
+echo -e "\ncount	place id	    name"
+echo -e $rating.
 

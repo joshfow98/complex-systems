@@ -1,0 +1,4 @@
+/*Wrote by Kieron*/
+
+/* Select average rating from places with joining review on gplusplaceid where price = $$$ */
+SELECT AVG(r.rating) FROM coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$\$\$'

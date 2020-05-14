@@ -3,15 +3,18 @@
 function separator() {
     echo "+-----------------------------------------------------------+"
 }
-
+# prints out the inital messsage to show the script is running
 separator
 echo -e "This script computes the number of reviews for each price range \nin the Places and Reviews dataset."
 separator
+#run the sql query to select count of all places joining the reviews table on gplusplaceid where price = $
+impala-shell -f ./functionality13/count1.sql
+separator
 
-rating1=$(impala-shell -B --quiet -q "SELECT COUNT(*) from coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$'")
-rating2=$(impala-shell -B --quiet -q "SELECT COUNT(*) FROM coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$\$'")
-rating3=$(impala-shell -B --quiet -q "SELECT COUNT(*) FROM coursework.places AS p LEFT JOIN coursework.reviews AS r ON p.gplusplaceid = r.gplusplaceid WHERE p.price = '\$\$\$'")
+#run the sql query to select count of all places joining the reviews table on gplusplacesid where price = $$
+impala-shell -f ./functionality13/count2.sql
+separator
 
-echo -e "\nTotal number of reviews for \$ is $rating1."
-echo "Total number of reviews for \$\$ is $rating2."
-echo "Total number of reviews for \$\$\$ is $rating3."
+#run the sql query to select count of all places joing he reviews table on gplusplacesid where price == $$$
+impala-shell -f ./functionality13/count3.sql
+
